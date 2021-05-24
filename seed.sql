@@ -5,4 +5,4 @@
 -- INSERT INTO posts (date, subject, posts) VALUES ('2021-05-24', 'database', 'I learned how to insert date manually');
 -- INSERT INTO posts (date, subject, posts) VALUES ('2021-05-24', 'project', 'I decided I would seed my project with posts from my journey of this project.');
 -- INSERT INTO posts (date, subject, posts) VALUES ('2021-05-24', 'project', 'I made my second commit with migration and seed files populated. I will be adding to the seed file through the project to deliver content and for fun :-P');
-
+-- INSERT INTO posts (date, subject, posts) VALUES ('2021-05-24', 'github', 'I had some trouble committin changes to github. I did not properly input node_modules in the gitigore file. Yeah, I need more training on this merging branches on github.');
