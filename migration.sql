@@ -2,7 +2,7 @@
 
 -- CREATE TABLE posts (
 --     id SERIAl PRIMARY KEY,
---     date DATE,
+--     date TIMESTAMP WITH TIME ZONE,
 --     subject TEXT,
 --     posts TEXT
 -- );
