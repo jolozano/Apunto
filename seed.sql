@@ -8,7 +8,8 @@
 -- INSERT INTO posts (date, subject, posts) VALUES ('2021-05-24', 'github', 'I had some trouble committin changes to github. I did not properly input node_modules in the gitigore file. Yeah, I need more training on this merging branches on github.');
 -- INSERT INTO posts (date, subject, posts) VALUES ('2021-05-24', 'database', 'I just finished connecting my db to the server. I am going to make my first get command. Lets hope there is not too many bugs lol.....I just found a bug with the insert. I have to escape the apostrophe somehow.');
 -- INSERT INTO posts (date, subject, posts) VALUES ('2021-05-24', 'server', 'I got the server to work to with a get request. Only a couple of bugs due to a missing period and used req instead of res.');
--- INSERT INTO posts (date, subject, posts) VALUES (CURRENT_TIMESTAMP, 'database', 'added the timestamp function');
--- INSERT INTO posts (date, subject, posts) VALUES (CURRENT_TIMESTAMP, 'database', 'lol went down a rabbit hole to show the time zone of the post. I think I got it.');
--- INSERT INTO posts (date, subject, posts) VALUES (CURRENT_TIMESTAMP, 'database', 'got it to display the time stamp with time zone lol. Moving on to next step');
---  INSERT INTO posts (date, subject, posts) VALUES (CURRENT_TIMESTAMP, 'database', 'well it displays properly in the psql but not in the data.rows. oh well moving on to the next step. bigger fish to fry.');
+-- INSERT INTO posts (date, subject, posts) VALUES (2021-05-24, 'database', 'added the timestamp function');
+-- INSERT INTO posts (date, subject, posts) VALUES (2021-05-24, 'database', 'lol went down a rabbit hole to show the time zone of the post. I think I got it.');
+-- INSERT INTO posts (date, subject, posts) VALUES (2021-05-24, 'database', 'got it to display the time stamp with time zone lol. Moving on to next step');
+--  INSERT INTO posts (date, subject, posts) VALUES (2021-05-24, 'database', 'well it displays properly in the psql but not in the data.rows. oh well moving on to the next step. bigger fish to fry.');
+-- INSERT INTO posts (date, subject, posts) VALUES (2021-05-24, 'project', 'Well, I think I am done for the day. I think I am at a good stopping point. I have the barebones of my server and index.html. I was able to send a GET request with the psql. I will work on the app.js tomorrow morning. I need a break.');
