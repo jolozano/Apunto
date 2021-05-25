@@ -33,6 +33,7 @@ app.post('/api/posts', (req, res) => {
             console.log('error',err)
             res.status(404).send('NOT FOUND');
         } else {
+            console.log(req.body)
             res.json('Post has been saved.')
         }
     });
