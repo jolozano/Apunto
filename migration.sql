@@ -4,5 +4,5 @@
 --     id SERIAl PRIMARY KEY,
 --     date TIMESTAMP WITH TIME ZONE,
 --     subject TEXT,
---     posts TEXT
+--     post TEXT
 -- );
