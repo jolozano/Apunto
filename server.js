@@ -25,6 +25,17 @@ app.get('/api/posts', (req, res) => {
             res.json(data.rows);
         }
     })
+});
+
+app.post('/api/posts', (req, res) => {
+    pool.query("INSERT INTO posts (date, subject, posts) VALUES (CURRENT_TIMESTAMP, $1, $2);", [req.body.subject, req.body.post], (err, data) => {
+        if (err) {
+            console.log('error',err)
+            res.status(404).send('NOT FOUND');
+        } else {
+            res.json('Post has been saved.')
+        }
+    });
 })
 
 app.listen(3000, function() {

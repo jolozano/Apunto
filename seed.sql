@@ -11,5 +11,6 @@
 -- INSERT INTO posts (date, subject, posts) VALUES (2021-05-24, 'database', 'added the timestamp function');
 -- INSERT INTO posts (date, subject, posts) VALUES (2021-05-24, 'database', 'lol went down a rabbit hole to show the time zone of the post. I think I got it.');
 -- INSERT INTO posts (date, subject, posts) VALUES (2021-05-24, 'database', 'got it to display the time stamp with time zone lol. Moving on to next step');
---  INSERT INTO posts (date, subject, posts) VALUES (2021-05-24, 'database', 'well it displays properly in the psql but not in the data.rows. oh well moving on to the next step. bigger fish to fry.');
+-- INSERT INTO posts (date, subject, posts) VALUES (2021-05-24, 'database', 'well it displays properly in the psql but not in the data.rows. oh well moving on to the next step. bigger fish to fry.');
 -- INSERT INTO posts (date, subject, posts) VALUES (2021-05-24, 'project', 'Well, I think I am done for the day. I think I am at a good stopping point. I have the barebones of my server and index.html. I was able to send a GET request with the psql. I will work on the app.js tomorrow morning. I need a break.');
+-- INSERT INTO posts (date, subject, posts) VALUES (CURRENT_TIMESTAMP, 'overtime', 'working a little longer on the project before bed. kinda excited about what I can do. I am sure that will subside when I encounter real problems but really excited to prove what I am capable of.');
