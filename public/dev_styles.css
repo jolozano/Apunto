@@ -1,15 +1,18 @@
 body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     background-image: url('background1.jpeg');
     font-family: 'Dancing Script', cursive;
 }
 .container {
-    margin: 0;
+    /* margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; */
 }
 .headerContainer {
     display: flex;
-    /* justify-content: center; */
+    background-color: white;
     flex-direction: column;
     /* background-color: #5995DA; */
 }
@@ -30,9 +33,9 @@ h1 {
     margin: 5px;
 }
 .bodyContainer {
-    height: 31em;
+    height: 42em;
     margin-top: 45px;
-    background-color: #666599DA;
+    /* background-color: #666599DA; */
 }
 .inputContainer {
     display: flex;
@@ -70,14 +73,14 @@ form {
     margin-top: 50px;
 }
 #footer {
-    height: 15em;
+    /* height: 15em; */
     margin-bottom: 0em;
 }
 .footerContainer {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     align-content: center;
     margin: auto;
-    background-color: #166599DA;
+    /* background-color: #166599DA; */
 }
