@@ -30,6 +30,7 @@ h1 {
     margin: 5px;
 }
 .bodyContainer {
+    height: 31em;
     margin-top: 45px;
     background-color: #666599DA;
 }

@@ -30,6 +30,7 @@ h1 {
     margin: 5px;
 }
 .bodyContainer {
+    height: 31em;
     margin-top: 45px;
     background-color: #666599DA;
 }
@@ -56,6 +57,7 @@ form {
     flex-wrap: wrap;
     align-content: center;
     margin-top: 50px;
+    
 }
 .header {
     margin: 10px;
