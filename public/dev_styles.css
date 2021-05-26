@@ -56,6 +56,7 @@ form {
     flex-wrap: wrap;
     align-content: center;
     margin-top: 50px;
+    
 }
 .header {
     margin: 10px;
@@ -77,4 +78,5 @@ form {
     flex-wrap: wrap;
     align-content: center;
     margin: auto;
+    background-color: #166599DA;
 }
