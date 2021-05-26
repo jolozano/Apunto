@@ -1,8 +1,8 @@
--- DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS posts;
 
--- CREATE TABLE posts (
---     id SERIAl PRIMARY KEY,
---     date TIMESTAMP WITH TIME ZONE,
---     subject TEXT,
---     post TEXT
--- );
+CREATE TABLE posts (
+    id SERIAl PRIMARY KEY,
+    date TIMESTAMP WITH TIME ZONE,
+    subject TEXT,
+    post TEXT
+);
