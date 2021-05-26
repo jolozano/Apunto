@@ -13,7 +13,7 @@ $(document).ready(function(){
         let result = $var.val();
         return result;
     }
-    $.get('/api/posts', (data) => {
+    $.get('https://intense-thicket-66788.herokuapp.com/api/posts', (data) => {
             for (let index of data) {
                 let $divHeader = $(`<div class='header'>Date:     ${index.date.slice(0,16)}     Subject:     ${index.subject}     ${index.post}</div>`);
                 $divHeader.appendTo($resultsContainer);
@@ -37,7 +37,7 @@ $(document).ready(function(){
     $searchButton.on('click', () => {
         let searchText = {search: $searchText.val()};
         console.log(searchText)
-        $.get('/api/posts', searchText, (data) => {
+        $.get('https://intense-thicket-66788.herokuapp.com/api/posts', searchText, (data) => {
             $resultsContainer.hide();
             $searchResults.empty();
             console.log(data);
