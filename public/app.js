@@ -3,10 +3,10 @@ $(document).ready(function(){
 
     const $searchText = $('#searchBox');
     const $searchButton = $('#searchButton');
-    const $subjectBox = $('.subjectBox');
-    const $postText = $('.postText');
-    const $postButton =  $('.post');
-    const $resultsContainer = $('.results')
+    const $subjectBox = $('#subjectBox');
+    const $postText = $('#postText');
+    const $postButton =  $('#post');
+    const $resultsContainer = $('#results')
     const $searchResults = $('#searchResults')
 
     function getText($var) {
@@ -15,10 +15,8 @@ $(document).ready(function(){
     }
     $.get('/api/posts', (data) => {
             for (let index of data) {
-                let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)} Subject: ${index.subject}</div>`)
-                let $divPost = $(`<div class='resultPost'>${index.post}</div>`);
+                let $divHeader = $(`<div class='header'>Date:     ${index.date.slice(0,16)}     Subject:     ${index.subject}     ${index.post}</div>`);
                 $divHeader.appendTo($resultsContainer);
-                $divPost.appendTo($resultsContainer);
             }
     })
 
@@ -44,10 +42,8 @@ $(document).ready(function(){
             $searchResults.empty();
             console.log(data);
             for (let index of data) {
-                let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)} Subject: ${index.subject}</div>`)
-                let $divPost = $(`<div class='resultPost'>${index.post}</div>`);
+                let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)} Subject: ${index.subject} ${index.post}</div>`)
                 $divHeader.appendTo($searchResults);
-                $divPost.appendTo($searchResults);
             }
         })
     });

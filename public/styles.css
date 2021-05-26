@@ -1,3 +1,72 @@
+.container {
+}
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.title {
+    display: flex;
+    justify-content: center;
+}
 h1 {
     color: blue;
+}
+.search {
+    display: flex;
+    margin: auto;
+}
+#searchBox {
+    margin: 5px;
+}
+#searchButton {
+    margin: 5px;
+}
+.bodyContainer {
+    margin-top: 50px;
+}
+.inputContainer {
+    display: flex;
+    justify-content: center;
+    
+}
+form {
+    
+}
+#subjectBox {
+    margin: 10px;
+}
+#postText {
+    margin: 10px;
+}
+#post {
+    margin: 10px;
+}
+#results {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-top: 50px;
+}
+.header {
+    margin: 10px;
+}
+#searchResults {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-top: 50px;
+}
+#footer {
+    height: 15em;
+    margin-bottom: 0em;
+}
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: auto;
 }
