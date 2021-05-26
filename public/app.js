@@ -13,7 +13,7 @@ $(document).ready(function(){
         let result = $var.val();
         return result;
     }
-    $.get('http://intense-thicket-66788.herokuapp.com/api/posts', (data) => {
+    $.get('https://intense-thicket-66788.herokuapp.com/api/posts', (data) => {
             for (let index of data) {
                 let $divHeader = $(`<div class='header'>Date:     ${index.date.slice(0,16)}     Subject:     ${index.subject}     ${index.post}</div>`);
                 $divHeader.appendTo($resultsContainer);
