@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -10,10 +11,10 @@ morgan('tiny')
 
 app.use(express.static('./public'))
 const pool = new Pool ({
-    user: 'josee.lozanojr.',
-    host: 'localhost',
-    database: 'apunto',
-    port: 5432,
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 app.get('/api/posts', (req, res) => {
@@ -51,6 +52,6 @@ app.post('/api/posts', (req, res) => {
     });
 })
 
-app.listen(3000, function() {
-    console.log('Server is Running and FMC');
+app.listen(process.env.PORT, function() {
+    console.log(`Server is Running and FMC on ${process.env.PORT}`);
 })
