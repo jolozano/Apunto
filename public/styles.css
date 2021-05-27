@@ -8,13 +8,14 @@ body {
     padding: 0;
     box-sizing: border-box; */
     text-align: center;
-    background-image: url('background1.jpeg');
     font-family: 'Dancing Script', cursive;
 }
 /* rules for mobile users. use a media.query to see which one to use. */
 .container {
     display: flex;
     flex-direction: column;
+    background-image: url('background1.jpeg');
+    opacity: 0.5;
 }
 /* rules for all other users */
 @media all and (min-width: 768px) {
