@@ -11,14 +11,44 @@ body {
     background-image: url('background1.jpeg');
     font-family: 'Dancing Script', cursive;
 }
+/* rules for mobile users. use a media.query to see which one to use. */
 .container {
+    display: flex;
+    flex-direction: column;
 }
-.headerContainer {
+/* rules for all other users */
+@media all and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    header,
+    footer {
+        width: 100%;
+    }
+    main {
+        /* flex: 2; */
+        order: 2;
+        min-height: 80vh;
+    }
+    .left-sidebar {
+        order: 1;
+        /* flex: 1; */
+    }
+    .right-sidebar {
+        /* flex: 1; */
+        order: 3;
+    }
+    footer {
+        order: 4;
+    }
+}
+/* .headerContainer {
     display: flex;
     background-color: white;
     flex-direction: column;
-}
-.title {
+} */
+/* .title {
     display: flex;
     justify-content: center;
 }
@@ -78,4 +108,4 @@ form {
     flex-direction: column;
     align-content: center;
     margin: auto;
-}
+} */
