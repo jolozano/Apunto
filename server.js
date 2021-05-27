@@ -19,17 +19,18 @@ const pool = new Pool ({
 
 app.get('/api/posts', (req, res) => {
     if (Object.keys(req.query).length != 0) {
-        pool.query("SELECT * FROM posts WHERE (subject || post) LIKE $1;", ['%' + req.query.search + '%'], (err, data) => {
-            if (err) {
-                console.log('error', err);
-                res.status(404).send(err.message)
-            } else {
-                console.log(data.rows)
-                res.json(data.rows);
-            }
-        })
+        pool.query("SELECT * FROM posts WHERE (subject || post) LIKE $1;", ['%' + req.query.search + '%'],
+            (err, data) => {
+                if (err) {
+                    console.log('error', err);
+                    res.status(404).send(err.message)
+                } else {
+                    console.log(data.rows)
+                    res.json(data.rows);
+                }
+            })
     } else {
-        pool.query('SELECT * FROM posts ORDER BY id DESC LIMIT 5;', (err, data) => {
+        pool.query('SELECT * FROM posts ORDER BY id DESC LIMIT 15;', (err, data) => {
             if (err) {
                 console.log('error', err);
                 res.status(404).send('NOT FOUND')
