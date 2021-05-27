@@ -37,6 +37,10 @@ body {
     form {
         height: fit-content;
     }
+    .header {
+        text-align: start;
+        padding: 1rem;
+    }
     /* .left-sidebar {
         order: 1;
         flex: 1;
