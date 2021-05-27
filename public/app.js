@@ -15,8 +15,8 @@ $(document).ready(function(){
     }
     $.get('/api/posts', (data) => {
             for (let index of data) {
-                let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)}-----Subject: ${index.subject}
-                -----${index.post}</div>`);
+                let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)}---->Subject: ${index.subject}
+                ---->${index.post}</div>`);
                 $divHeader.appendTo($resultsContainer);
             }
     })
@@ -43,7 +43,8 @@ $(document).ready(function(){
             $searchResults.empty();
             console.log(data);
             for (let index of data) {
-                let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)} Subject: ${index.subject} ${index.post}</div>`)
+                let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)}---->Subject: ${index.subject}
+                ---->${index.post}</div>`);
                 $divHeader.appendTo($searchResults);
             }
         })
