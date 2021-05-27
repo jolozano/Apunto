@@ -34,8 +34,8 @@ body {
         order: 2;
         min-height: 80vh;
     }
-    .inputContainer{
-
+    form {
+        height: fit-content;
     }
     /* .left-sidebar {
         order: 1;
