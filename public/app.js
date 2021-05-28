@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
     
     const $searchText = $('#searchBox');
     const $searchButton = $('#searchButton');
@@ -9,21 +9,20 @@ $(document).ready(function(){
     const $searchResults = $('#searchResults')
 
     $.get('/api/posts', (data) => {
-            for (let index of data) {
-                let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)}---->Subject: ${index.subject}
-                ---->${index.post}</div>`);
-                $divHeader.appendTo($resultsContainer);
-            }
+        $searchResults.hide();
+        for (let index of data) {
+            let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)}---->Subject: ${index.subject}
+            ---->${index.post}</div>`);
+            $divHeader.appendTo($resultsContainer);
+        }
     })
 
     $searchButton.on('click', (event) => {
         event.preventDefault();
         let searchText = {search: $searchText.val()};
-        console.log(searchText)
         $.get('/api/posts', searchText, (data) => {
             $resultsContainer.hide();
             $searchResults.empty();
-            console.log(data);
             for (let index of data) {
                 let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)}---->Subject: ${index.subject}
                 ---->${index.post}</div>`);
@@ -34,7 +33,6 @@ $(document).ready(function(){
 
     $postButton.on('click', () => {
         let post = {subject: $subjectBox.val(), post: $postText.val()};
-        console.log(post);
         $.post(
             {
                 url: '/api/posts',

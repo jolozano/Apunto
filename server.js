@@ -1,15 +1,13 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const cors = require('cors');
 const morgan = require('morgan');
 const { Pool } = require('pg');
 
+app.use(express.static('./public'))
 app.use(express.json());
-app.use(cors());
 morgan('tiny')
 
-app.use(express.static('./public'))
 const pool = new Pool ({
     connectionString: process.env.DATABASE_URL,
     ssl: {
@@ -33,7 +31,7 @@ app.get('/api/posts', (req, res) => {
         pool.query('SELECT * FROM posts ORDER BY id DESC LIMIT 10;', (err, data) => {
             if (err) {
                 console.log('error', err);
-                res.status(404).send('NOT FOUND')
+                res.status(404).send(err.message)
             } else {
                 res.json(data.rows);
             }
@@ -46,7 +44,7 @@ app.post('/api/posts', (req, res) => {
         (err, data) => {
             if (err) {
                 console.log('error',err)
-                res.status(404).send('NOT FOUND');
+                res.status(404).send(err.message)
             } else {
                 console.log(req.body)
                 res.json('Post has been saved.')
