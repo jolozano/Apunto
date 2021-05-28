@@ -9,7 +9,6 @@ $(document).ready(function() {
     const $searchResults = $('#searchResults')
 
     $.get('/api/posts', (data) => {
-        $searchResults.hide();
         for (let index of data) {
             let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)}---->Subject: ${index.subject}
             ---->${index.post}</div>`);
@@ -23,7 +22,6 @@ $(document).ready(function() {
         $.get('/api/posts', searchText, (data) => {
             $resultsContainer.hide();
             $searchResults.empty();
-            $searchResults.unhide();
             for (let index of data) {
                 let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)}---->Subject: ${index.subject}
                 ---->${index.post}</div>`);
