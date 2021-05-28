@@ -1,12 +1,12 @@
 $(document).ready(function() {
-    
+
     const $searchText = $('#searchBox');
     const $searchButton = $('#searchButton');
     const $subjectBox = $('#subjectBox');
     const $postText = $('#postText');
     const $postButton =  $('#post');
     const $resultsContainer = $('#results')
-    const $searchResults = $('#searchResults')
+    const $searchContainer = $('#searchResults')
 
     $.get('/api/posts', (data) => {
         for (let index of data) {
@@ -25,7 +25,7 @@ $(document).ready(function() {
             for (let index of data) {
                 let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)}---->Subject: ${index.subject}
                 ---->${index.post}</div>`);
-                $divHeader.appendTo($searchResults);
+                $divHeader.appendTo($searchContainer);
             }
         })
     });
