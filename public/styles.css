@@ -7,6 +7,7 @@ body {
     text-align: center;
     font-family: 'Dancing Script', cursive;
     background-image: url('background1.jpeg');
+    font-size: large;
 }
 /* rules for mobile users. use a media.query to see which one to use. */
 .container {
@@ -24,6 +25,9 @@ body {
     footer {
         width: 100%;
     }
+    h1 {
+        font-size:xxx-large
+    }
     main {
         display: flex;
         flex-wrap: wrap;
@@ -33,6 +37,9 @@ body {
     }
     form {
         height: fit-content;
+    }
+    #searchResults {
+        width:60%
     }
     .header {
         text-align: start;
