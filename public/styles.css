@@ -4,18 +4,14 @@
     margin:0;
 }
 body {
-    /* margin: 0;
-    padding: 0;
-    box-sizing: border-box; */
     text-align: center;
     font-family: 'Dancing Script', cursive;
+    background-image: url('background1.jpeg');
 }
 /* rules for mobile users. use a media.query to see which one to use. */
 .container {
     display: flex;
     flex-direction: column;
-    background-image: url('background1.jpeg');
-    opacity: 0.5;
 }
 /* rules for all other users */
 @media all and (min-width: 768px) {
@@ -24,11 +20,11 @@ body {
         flex-wrap: wrap;
     }
     header,
+    main,
     footer {
         width: 100%;
     }
     main {
-        /* flex: 2; */
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -42,81 +38,7 @@ body {
         text-align: start;
         padding: 1.5rem;
     }
-    /* .left-sidebar {
-        order: 1;
-        flex: 1;
-    }
-    .right-sidebar {
-        flex: 1;
-        order: 3;
-    } */
     footer {
-        order: 4;
+        order: 3;
     }
 }
-/* .headerContainer {
-    display: flex;
-    background-color: white;
-    flex-direction: column;
-} */
-/* .title {
-    display: flex;
-    justify-content: center;
-}
-h1 {
-}
-.search {
-    margin: auto;
-}
-#searchBox {
-    margin: 5px;
-}
-#searchButton {
-    margin: 5px;
-}
-.bodyContainer {
-    height: 42em;
-    margin-top: 45px;
-}
-.inputContainer {
-    display: flex;
-    justify-content: center;
-}
-form {
-    
-}
-#subjectBox {
-    margin: 10px;
-}
-#postText {
-    margin: 10px;
-}
-#post {
-    margin: 10px;
-}
-#results {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    margin-top: 50px;
-}
-.header {
-    margin: 10px;
-}
-#searchResults {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    margin-top: 50px;
-}
-#footer {
-    margin-bottom: 0em;
-}
-.footerContainer {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    margin: auto;
-} */
