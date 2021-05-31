@@ -7,6 +7,17 @@ $(document).ready(function() {
     const $postButton =  $('#post');
     const $resultsContainer = $('#results')
     const $searchContainer = $('#searchResults')
+    let $del;
+
+    const deletePost = (id) => {
+        $.ajax({
+            url: '/api/posts' + '?' + $.param(id),
+            type: 'DELETE',
+            success: (res) => {
+                console.log(res);
+            }
+        })
+    }
 
     $.get('/api/posts', (data) => {
         for (let index of data) {
@@ -14,10 +25,12 @@ $(document).ready(function() {
             ---->${index.post}<form><button id=${index.id} class='del'>Delete</button></form></div>`);
             $divHeader.appendTo($resultsContainer);
         }
-        let $del = $('.del');
-        $del.on('click', (e) => {
-            console.log(e.target.id)
-        })
+        $del = $('.del');
+            $del.on('click', (e) => {
+                let idParam = {id: e.target.id};
+                console.log(idParam)
+                deletePost(idParam);
+            })
     })
 
     $searchButton.on('click', (event) => {
@@ -25,7 +38,7 @@ $(document).ready(function() {
         let searchText = {search: $searchText.val()};
         $.get('/api/posts', searchText, (data) => {
             $resultsContainer.hide();
-            $searchResults.empty();
+            $searchContainer.empty();
             for (let index of data) {
                 let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)}---->Subject: ${index.subject}
                 ---->${index.post}<form><button id=${index.id} class='del'>Delete</button></form></div>`);
