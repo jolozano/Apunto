@@ -45,6 +45,17 @@ app.post('/api/posts', (req, res) => {
     });
 })
 
+app.delete('/api/posts', (req, res) => {
+    pool.query("DELETE FROM posts WHERE id=$1;", [req.query.id], (err, data) => {
+        if (err) {
+            res.status(404).send('NOT FOUND')
+        } else {
+            console.log(data.rows)
+            res.json("DELETED POST");
+        }
+    })
+})
+
 app.listen(3000, function() {
     console.log('Server is Running and FMC');
 })

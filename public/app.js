@@ -7,17 +7,35 @@ $(document).ready(function(){
     const $postText = $('#postText');
     const $postButton =  $('#post');
     const $resultsContainer = $('#results')
-    const $searchResults = $('#searchResults')
+    const $searchResults = $('#searchResults');
+    let $del;
 
     function getText($var) {
         let result = $var.val();
         return result;
     }
+    const deletePost = (id) => {
+        $.ajax({
+            url: '/api/posts' + '?' + $.param(id),
+            type: 'DELETE',
+            success: (res) => {
+                console.log(res);
+            }
+        })
+    }
+
     $.get('/api/posts', (data) => {
             for (let index of data) {
-                let $divHeader = $(`<div class='header'>Date:     ${index.date.slice(0,16)}     Subject:     ${index.subject}     ${index.post}</div>`);
+                let $divHeader =
+                $(`<div class='header'>Date:${index.date.slice(0,16)}Subject:${index.subject}${index.post}<form><button id=${index.id} class='del'>Delete</button></form></div>`);
                 $divHeader.appendTo($resultsContainer);
             }
+            $del = $('.del');
+            $del.on('click', (e) => {
+                let idParam = {id: e.target.id};
+                console.log(idParam)
+                deletePost(idParam);
+            })
     })
 
     $postButton.on('click', () => {
