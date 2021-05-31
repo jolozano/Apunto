@@ -2,19 +2,13 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
-const { Pool } = require('pg');
+const pool = require('./db_config.js')
 
 app.use(express.json());
 app.use(cors());
 morgan('tiny')
 
 app.use(express.static('./public'))
-const pool = new Pool ({
-    user: 'josee.lozanojr.',
-    host: 'localhost',
-    database: 'apunto',
-    port: 5432,
-});
 
 app.get('/api/posts', (req, res) => {
     if (Object.keys(req.query).length != 0) {
