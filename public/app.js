@@ -11,7 +11,7 @@ $(document).ready(function() {
     $.get('/api/posts', (data) => {
         for (let index of data) {
             let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)}---->Subject: ${index.subject}
-            ---->${index.post}<button id=${index.id} class='del'></button></div>`);
+            ---->${index.post}<form><button id=${index.id} class='del'>Delete</button></form></div>`);
             $divHeader.appendTo($resultsContainer);
         }
         let $del = $('.del');
@@ -28,7 +28,7 @@ $(document).ready(function() {
             $searchResults.empty();
             for (let index of data) {
                 let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)}---->Subject: ${index.subject}
-                ---->${index.post}<button id=${index.id} class='del'></button></div>`);
+                ---->${index.post}<form><button id=${index.id} class='del'>Delete</button></form></div>`);
                 $divHeader.appendTo($searchContainer);
             }
         })
