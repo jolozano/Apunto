@@ -11,9 +11,13 @@ $(document).ready(function() {
     $.get('/api/posts', (data) => {
         for (let index of data) {
             let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)}---->Subject: ${index.subject}
-            ---->${index.post}</div>`);
+            ---->${index.post}<button id=${index.id} class='del'></button></div>`);
             $divHeader.appendTo($resultsContainer);
         }
+        let $del = $('.del');
+        $del.on('click', (e) => {
+            console.log(e.target.id)
+        })
     })
 
     $searchButton.on('click', (event) => {
@@ -24,7 +28,7 @@ $(document).ready(function() {
             $searchResults.empty();
             for (let index of data) {
                 let $divHeader = $(`<div class='header'>Date: ${index.date.slice(0,16)}---->Subject: ${index.subject}
-                ---->${index.post}</div>`);
+                ---->${index.post}<button id=${index.id} class='del'></button></div>`);
                 $divHeader.appendTo($searchContainer);
             }
         })
