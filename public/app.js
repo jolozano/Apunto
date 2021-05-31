@@ -44,6 +44,12 @@ $(document).ready(function() {
                 ---->${index.post}<form><button id=${index.id} class='del'>Delete</button></form></div>`);
                 $divHeader.appendTo($searchContainer);
             }
+            $del = $('.del');
+            $del.on('click', (e) => {
+                let idParam = {id: e.target.id};
+                console.log(idParam)
+                deletePost(idParam);
+            })
         })
     });
 
