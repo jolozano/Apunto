@@ -28,7 +28,7 @@ app.get('/api/posts', (req, res) => {
                 }
             })
     } else {
-        pool.query('SELECT * FROM posts ORDER BY id DESC LIMIT 10;', (err, data) => {
+        pool.query('SELECT * FROM posts ORDER BY id DESC ILIMIT 10;', (err, data) => {
             if (err) {
                 console.log('error', err);
                 res.status(404).send(err.message)
