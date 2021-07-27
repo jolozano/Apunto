@@ -5,10 +5,14 @@ $(document).ready(function() {
     const $subjectBox = $('#subjectBox');
     const $postText = $('#postText');
     const $postButton =  $('#post');
-    const $resultsContainer = $('#results')
-    const $searchContainer = $('#searchResults')
+    const $resultsContainer = $('#results');
+    const $searchContainer = $('#searchResults');
+    const $ssoButton = $('.g-signin2');
     let $del;
 
+    $ssoButton.on('click', (data) => {
+        console.log(data)
+    })
     const deletePost = (id) => {
         $.ajax({
             url: '/api/posts' + '?' + $.param(id),
