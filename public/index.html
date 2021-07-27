@@ -12,6 +12,14 @@
   <meta name="google-signin-client_id" content="807848462893-mhhbogjqkm7qm9gt1m2dreqk4vsrf7gi.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="https://apis.google.com/js/api.js" async defer></script>
+  <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
+  <script>
+    window.onLoadCallback = function(){
+    gapi.auth2.init({
+        client_id: '807848462893-mhhbogjqkm7qm9gt1m2dreqk4vsrf7gi.apps.googleusercontent.com'
+        });
+    }
+  </script>
 
 </head>
 
