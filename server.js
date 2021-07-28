@@ -54,7 +54,7 @@ app.post('/api/posts', (req, res) => {
 })
 
 app.post('/api/tokensignin', (req, res) => {
-    const client = new OAuth2Client(CLIENT_ID);
+    const client = new OAuth2Client('807848462893-mhhbogjqkm7qm9gt1m2dreqk4vsrf7gi.apps.googleusercontent.com');
     async function verify() {
     const ticket = await client.verifyIdToken({
         idToken: token,
