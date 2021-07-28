@@ -53,7 +53,7 @@ app.post('/api/posts', (req, res) => {
 })
 
 app.post('/api/tokensignin', (req, res) => {
-    console.log(req.body);
+    console.log(req);
     res.json('It worked!')
 })
 
