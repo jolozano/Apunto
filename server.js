@@ -54,10 +54,11 @@ app.post('/api/posts', (req, res) => {
 })
 
 app.post('/api/tokensignin', (req, res) => {
+    console.log(req)
     const client = new OAuth2Client('807848462893-mhhbogjqkm7qm9gt1m2dreqk4vsrf7gi.apps.googleusercontent.com');
     async function verify() {
     const ticket = await client.verifyIdToken({
-        idToken: token,
+        idToken: req.idToken,
         audience: '807848462893-mhhbogjqkm7qm9gt1m2dreqk4vsrf7gi.apps.googleusercontent.com',  // Specify the CLIENT_ID of the app that accesses the backend
         // Or, if multiple clients access the backend:
         //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
@@ -68,7 +69,7 @@ app.post('/api/tokensignin', (req, res) => {
     // const domain = payload['hd'];
     }
     verify().catch(console.error);
-    res.json('It worked!')
+    res.json('Posted')
 })
 
 app.delete('/api/posts', (req, res) => {
