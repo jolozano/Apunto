@@ -71,7 +71,7 @@ app.post('/api/posts', (req, res) => {
 app.post('/api/tokensignin', (req, res) => {
     console.log(req)
     verify().catch(console.error);
-    res.json(userid)
+    res.json('Posted')
 })
 
 app.delete('/api/posts', (req, res) => {
