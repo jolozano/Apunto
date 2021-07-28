@@ -52,6 +52,11 @@ app.post('/api/posts', (req, res) => {
     });
 })
 
+app.post('/api/tokensignin', (req, res) => {
+    console.log(req.body);
+    res.json('It worked!')
+})
+
 app.delete('/api/posts', (req, res) => {
     pool.query("DELETE FROM posts WHERE id=$1;", [req.query.id], (err, data) => {
         if (err) {
