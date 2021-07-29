@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS adminUser;
+
+CREATE TABLE adminUser (
+    id SERIAl,
+    sub VARCHAR ( 50 ) UNIQUE NOT NULL PRIMARY KEY,
+    email VARCHAR ( 255 ) UNIQUE NOT NULL,
+    name VARCHAR ( 50 ) NOT NULL,
+    img VARCHAR ( 255 ) NOT NULL
+);
