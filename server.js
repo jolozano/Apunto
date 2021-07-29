@@ -4,6 +4,9 @@ const app = express();
 const morgan = require('morgan');
 const { Pool } = require('pg');
 const {OAuth2Client} = require('google-auth-library');
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.urlencoded({extended: false}))
 
 const client = new OAuth2Client('807848462893-mhhbogjqkm7qm9gt1m2dreqk4vsrf7gi.apps.googleusercontent.com');
 async function verify() {
