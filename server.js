@@ -70,9 +70,9 @@ app.post('/api/tokensignin', (req, res) => {
     const userid = payload['sub'];
     // If request specified a G Suite domain:
     // const domain = payload['hd'];
+    res.json(payload.email);
     }
     verify().catch(console.error);
-    res.json(payload.email);
 })
 
 app.delete('/api/posts', (req, res) => {
