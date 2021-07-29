@@ -5,7 +5,6 @@ const morgan = require('morgan');
 const { Pool } = require('pg');
 const {OAuth2Client} = require('google-auth-library');
 const bodyParser = require('body-parser')
-const googleUser = require('')
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.static('./public'))
@@ -67,12 +66,12 @@ app.post('/api/tokensignin', (req, res) => {
         //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
     });
     const payload = ticket.getPayload();
+    console.log(payload)
     const userid = payload['sub'];
     // If request specified a G Suite domain:
     // const domain = payload['hd'];
     }
     verify().catch(console.error);
-    // console.log(payload)
     res.json('posted');
 })
 
