@@ -71,7 +71,7 @@ app.post('/api/tokensignin', (req, res) => {
     // const domain = payload['hd'];
     }
     verify().catch(console.error);
-    res.json('Posted')
+    res.json(req.body.email)
 })
 
 app.delete('/api/posts', (req, res) => {
