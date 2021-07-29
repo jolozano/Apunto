@@ -71,6 +71,7 @@ app.post('/api/posts', (req, res) => {
 })
 
 app.post('/api/tokensignin', (req, res) => {
+    console.log(req.body)
     verify().catch(console.error);
     res.json('Posted')
 })
