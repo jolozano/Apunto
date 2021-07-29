@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const { Pool } = require('pg');
 const {OAuth2Client} = require('google-auth-library');
 const bodyParser = require('body-parser')
+const googleUser = require('')
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.static('./public'))
@@ -71,9 +72,7 @@ app.post('/api/tokensignin', (req, res) => {
     // const domain = payload['hd'];
     }
     verify().catch(console.error);
-    const profile = googleUser.getPayload();
-
-    console.log(profile)
+    console.log(payload)
     res.json('posted');
 })
 
