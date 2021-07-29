@@ -7,21 +7,6 @@ const {OAuth2Client} = require('google-auth-library');
 const bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({extended: false}))
-
-const client = new OAuth2Client('807848462893-mhhbogjqkm7qm9gt1m2dreqk4vsrf7gi.apps.googleusercontent.com');
-async function verify() {
-const ticket = await client.verifyIdToken({
-    idToken: token,
-    audience: '807848462893-mhhbogjqkm7qm9gt1m2dreqk4vsrf7gi.apps.googleusercontent.com',  // Specify the CLIENT_ID of the app that accesses the backend
-    // Or, if multiple clients access the backend:
-    //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
-});
-const payload = ticket.getPayload();
-const userid = payload['sub'];
-// If request specified a G Suite domain:
-// const domain = payload['hd'];
-}
-
 app.use(express.static('./public'))
 app.use(express.json());
 morgan('tiny')
@@ -71,7 +56,20 @@ app.post('/api/posts', (req, res) => {
 })
 
 app.post('/api/tokensignin', (req, res) => {
-    console.log(req.body)
+    console.log(req.body.idtoken)
+    const client = new OAuth2Client('807848462893-mhhbogjqkm7qm9gt1m2dreqk4vsrf7gi.apps.googleusercontent.com');
+    async function verify() {
+    const ticket = await client.verifyIdToken({
+        idToken: req.body.idtoken,
+        audience: '807848462893-mhhbogjqkm7qm9gt1m2dreqk4vsrf7gi.apps.googleusercontent.com',  // Specify the CLIENT_ID of the app that accesses the backend
+        // Or, if multiple clients access the backend:
+        //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
+    });
+    const payload = ticket.getPayload();
+    const userid = payload['sub'];
+    // If request specified a G Suite domain:
+    // const domain = payload['hd'];
+    }
     verify().catch(console.error);
     res.json('Posted')
 })
