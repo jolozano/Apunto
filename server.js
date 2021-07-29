@@ -72,7 +72,7 @@ app.post('/api/tokensignin', (req, res) => {
     // const domain = payload['hd'];
     }
     verify().catch(console.error);
-    console.log(payload)
+    // console.log(payload)
     res.json('posted');
 })
 
