@@ -65,7 +65,7 @@
         </footer>
         <script>
             function onSignIn(googleUser) {
-                var profile = googleUser.getBasicProfile();
+                var profile = auth2.currentUser.get().getBasicProfile();
                 var id_token = googleUser.getAuthResponse().id_token;
                 console.log('ID Token: ' + id_token)
                 console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
