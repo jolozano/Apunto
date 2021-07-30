@@ -6,10 +6,18 @@ $(document).ready(function() {
     const $postButton =  $('#post');
     const $resultsContainer = $('#results');
     const $searchContainer = $('#searchResults');
+    const $SSOsignOut = $('#signOut')
     let $del;
     let verified = null;
-    console.log(window)
 
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+        console.log('User signed out.');
+        });
+    }
+
+    $SSOsignOut.on('click', signOut)
     if (!verified) {
         $resultsContainer.hide();
         $searchContainer.empty();
