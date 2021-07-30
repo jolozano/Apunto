@@ -9,7 +9,7 @@ $(document).ready(function() {
     const $SSOsignOut = $('#signOut')
     const $bodyContainer = $('.bodyContainer')
     let $del;
-    let verified = true;
+    let verified = false;
 
     const clearContent = () => {
         $bodyContainer.hide()
