@@ -37,7 +37,7 @@
                         xhr.onload = function() {
                         console.log('Signed in as: ' + xhr.responseText);
                         };
-                        xhr.send('idtoken=' + id_token);
+                        xhr.send('idtoken=' + id_token).then(()=> console.log('callback'));
                     }
                 </script>
                 <a id='signOut' href="#">Sign out</a>
