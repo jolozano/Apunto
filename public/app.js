@@ -7,7 +7,7 @@ $(document).ready(function() {
     const $resultsContainer = $('#results');
     const $searchContainer = $('#searchResults');
     const $SSOsignOut = $('#signOut')
-    const $bodyContainer = $('./bodyContainer')
+    const $bodyContainer = $('.bodyContainer')
     let $del;
     let verified = null;
 
