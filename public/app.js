@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     const $searchText = $('#searchBox');
     const $searchButton = $('#searchButton');
@@ -36,7 +35,7 @@ $(document).ready(function() {
         });
     }
     $ssoSignOut.on('click', signOut());
-    $ssoSignIn.on('click', onSignIn(googleUser));
+    $ssoSignIn.on('click', onSignIn());
 
     if (!verified) {
         $resultsContainer.hide();
