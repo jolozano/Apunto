@@ -7,7 +7,6 @@ $(document).ready(function() {
     const $resultsContainer = $('#results');
     const $searchContainer = $('#searchResults');
     const $SSOsignOut = $('#signOut')
-    const $SSOsignIn = $('.g-signin2')
     let $del;
     let verified = null;
 
@@ -18,21 +17,6 @@ $(document).ready(function() {
         });
     }
 
-    function onSignIn() {
-        const googleUser = gapi.auth2.getAuthInstance().currentUser.get();
-        var profile = googleUser.getBasicProfile();
-        console.log(profile)
-        var id_token = googleUser.getAuthResponse().id_token;
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://intense-thicket-66788.herokuapp.com/api/tokensignin');
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function() {
-        console.log('Signed in as: ' + xhr.responseText);
-        };
-        xhr.send('idtoken=' + id_token);
-    }
-
-    $SSOsignIn.on('click', onSignIn)
     $SSOsignOut.on('click', signOut)
 
 
