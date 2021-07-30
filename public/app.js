@@ -18,7 +18,8 @@ $(document).ready(function() {
         });
     }
 
-    function onSignIn(googleUser) {
+    function onSignIn() {
+        const googleUser = gapi.auth2.getAuthInstance().currentUser.get();
         var profile = googleUser.getBasicProfile();
         console.log(profile)
         var id_token = googleUser.getAuthResponse().id_token;
