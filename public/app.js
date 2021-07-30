@@ -12,9 +12,9 @@ $(document).ready(function() {
     let verified = false;
 
     const clearContent = () => {
-        $bodyContainer.toggle()
-        $resultsContainer.toggle();
-        $searchContainer.toggle();
+        $bodyContainer.hide()
+        $resultsContainer.hide();
+        $searchContainer.hide();
     }
     function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
