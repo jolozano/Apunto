@@ -8,6 +8,7 @@ $(document).ready(function() {
     const $searchContainer = $('#searchResults');
     let $del;
     let verified = null;
+    console.log(window)
 
     if (!verified) {
         $resultsContainer.hide();
