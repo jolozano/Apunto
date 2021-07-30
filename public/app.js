@@ -1,5 +1,5 @@
-$(document).ready(function() {
 
+$(document).ready(function() {
     const $searchText = $('#searchBox');
     const $searchButton = $('#searchButton');
     const $subjectBox = $('#subjectBox');
