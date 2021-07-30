@@ -7,6 +7,7 @@ $(document).ready(function() {
     const $resultsContainer = $('#results');
     const $searchContainer = $('#searchResults');
     const $SSOsignOut = $('#signOut')
+    const $bodyContainer = $('./bodyContainer')
     let $del;
     let verified = null;
 
@@ -21,6 +22,7 @@ $(document).ready(function() {
 
 
     if (!verified) {
+        $bodyContainer.hide()
         $resultsContainer.hide();
         $searchContainer.empty();
     } else {
